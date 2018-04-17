@@ -5,7 +5,9 @@
   {mod, { sm_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    cowboy,
+    hackney
    ]},
   {env,[]},
   {modules, []},
