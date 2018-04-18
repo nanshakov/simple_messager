@@ -8,5 +8,5 @@ init(Req0, Opts) ->
     Req = response(Method, Req0),
     {ok, Req, Opts}.
 
-response(<<"GET">>, Req) ->
-    cowboy_req:reply(200, #{}, <<"Statistic...">>, Req).
+response(<<"GET">>, Req0) ->
+    network_lib:send(200, #{}, <<"Statistic...">>, Req0).
