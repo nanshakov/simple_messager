@@ -18,7 +18,9 @@ start(_StartType, _StartArgs) ->
     Dispatch = cowboy_router:compile([
         {'_', [
             {"/", sm_main_handler, []},
-            {"/users/", sm_users_handler, []}
+            {"/users/", sm_users_handler, []},
+            {"/account/", sm_account_handler, []},
+            {"/messages/", sm_message_handler, []}
         ]}
     ]),
     {ok, _} = cowboy:start_clear(http, [{port, 8080}], #{
